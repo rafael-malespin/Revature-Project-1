@@ -1,12 +1,26 @@
-# Revature_Project_1
+# Employee Reimbursement System (ERS)
 ## Project Description
-
+A reimbursement system for a company's employees. Employees can request reimbursements for expenses used for either LODGING, TRAVEL, FOOD, or OTHER, the employee may also view the status of previously submitted requests and filter by status.  Finance Managers can view sent in reimbursement requests and either approve or deny any PENDING request.
 ## Technologies Used
-
+- Java
+- JDBC
+- JUnit
+- Log4J
+- Gradle
+- PostgreSQL
+- HTML/CSS
+- JavaScript
 ## Features
 Current Features
-- sfd
+- Users can view the status of previously submitted requests
+- Users can filter previously submitted requests by status
+- Users can submit new reimbursement requests
+- Managers can view all past requests from all users and filter them by status
+- Managers can approve or deny any pending requests
 To-Do Features
+- Users can upload an image of their receipt(s)
+- Password Hashing
+- Allow managers to submit reimbursement requests that only other managers can approve/deny
 - Adjust H2 initialization and ReimbursementUpdate tests so that expected values consistently appear
 
 ## Getting Started
