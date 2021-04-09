@@ -27,10 +27,10 @@ To-Do Features
 - First, you need to clone the project
   - git clone https://github.com/rafael-malespin/Revature_Project_1.git
 - Second, you will need to setup the database
-  1) Open DBeaver (install if not installed) and connect to a RDS database
-  2) In the Database Manager, right click the connection and select "Create" then "Database"
-  3) Set "Tablespace" to Default and give the database a name
-  4) Enter the following in a sql script file and then execute it. This is to create the initial users and reimbursements
+  1. Open DBeaver (install if not installed) and connect to a RDS database
+  2. In the Database Manager, right click the connection and select "Create" then "Database"
+  3. Set "Tablespace" to Default and give the database a name
+  4. Enter the following in a sql script file and then execute it. This is to create the initial users and reimbursements
 ```sql 
 
 CREATE TABLE reimbursement_status(
@@ -104,10 +104,10 @@ VALUES (300,CURRENT_TIMESTAMP,'Airplane Ticket',1,1,2);
 
 ```
 - Third, set up the environment variables
-  1) In environment variables, create a variable "TRAINING_DB_NAME" and set its value to be the name of the database that was created in the previous point
-  2) create a variable "TRAINING_DB_ENDPOINT" and set its value to be the endpoint of the RDS database that was created in AWS
-  3) create a variable "TRAINING_DB_USERNAME" and set its value to be the username of the RDS database that was created in AWS
-  4) create a variable "TRAINING_DB_PASSWORD" and set its value to be the password of the RDS database that was created in AWS
+  1. In environment variables, create a variable "TRAINING_DB_NAME" and set its value to be the name of the database that was created in the previous point
+  2. create a variable "TRAINING_DB_ENDPOINT" and set its value to be the endpoint of the RDS database that was created in AWS
+  3. create a variable "TRAINING_DB_USERNAME" and set its value to be the username of the RDS database that was created in AWS
+  4. create a variable "TRAINING_DB_PASSWORD" and set its value to be the password of the RDS database that was created in AWS
 - Fourth, you will need to open the project in an IDE (preferably IntelliJ 2020.3 or above)
   - Open IntelliJ
   - Click File -> Open
