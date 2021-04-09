@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dao.UserDaoImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-04-09T02:20:17" hostname="DESKTOP-BKVSUEL" time="1.362">
+  <properties/>
+  <testcase name="loginTest()" classname="com.dao.UserDaoImplTest" time="0.599"/>
+  <testcase name="retrieveAllUsersTest()" classname="com.dao.UserDaoImplTest" time="0.257"/>
+  <testcase name="loginFailureTest()" classname="com.dao.UserDaoImplTest" time="0.501"/>
+  <system-out><![CDATA[[User{userID=1, username='rafael123', password='rafael123', firstName='Rafael', lastName='Malespin', email='rafael@yahoo.com', roleID=EMPLOYEE}, User{userID=2, username='dani321', password='dani321', firstName='Dani', lastName='Malespin', email='dani@yahoo.com', roleID=EMPLOYEE}, User{userID=3, username='gwen11', password='gwen11', firstName='Gwen', lastName='Levin', email='gwen@yahoo.com', roleID=FINANCE_MANAGER}]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

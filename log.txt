@@ -1,0 +1,4 @@
+2021-04-09 10:02:25 INFO  MainDriver:25 - Server has been started.
+2021-04-09 10:02:33 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-09 10:02:43 INFO  MainDriver:66 - User: 1 SUCCEEDED in LOGGING IN.
+2021-04-09 10:02:44 INFO  MainDriver:99 - All reimbursements for user: 1 were sent to client server.

@@ -1,0 +1,2 @@
+	0
+¤[User{userID=1, username='rafael123', password='rafael123', firstName='Rafael', lastName='Malespin', email='rafael@yahoo.com', roleID=EMPLOYEE}, User{userID=2, username='dani321', password='dani321', firstName='Dani', lastName='Malespin', email='dani@yahoo.com', roleID=EMPLOYEE}, User{userID=3, username='gwen11', password='gwen11', firstName='Gwen', lastName='Levin', email='gwen@yahoo.com', roleID=FINANCE_MANAGER}]

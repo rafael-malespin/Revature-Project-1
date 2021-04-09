@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.controller.UserControllerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-04-09T02:20:14" hostname="DESKTOP-BKVSUEL" time="2.959">
+  <properties/>
+  <testcase name="getAllUsersTest()" classname="com.controller.UserControllerTest" time="2.898"/>
+  <testcase name="loginFailureTest()" classname="com.controller.UserControllerTest" time="0.007"/>
+  <testcase name="getLoggedInFailureUserTest()" classname="com.controller.UserControllerTest" time="0.005"/>
+  <testcase name="getLoggedInUserTest()" classname="com.controller.UserControllerTest" time="0.004"/>
+  <testcase name="getAllUsersFailureTest()" classname="com.controller.UserControllerTest" time="0.005"/>
+  <testcase name="logoutUserTest()" classname="com.controller.UserControllerTest" time="0.017"/>
+  <testcase name="loginSuccessTest()" classname="com.controller.UserControllerTest" time="0.006"/>
+  <system-out><![CDATA[0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
