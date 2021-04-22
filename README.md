@@ -17,7 +17,7 @@ Current Features
 - Users can submit new reimbursement requests
 - Managers can view all past requests from all users and filter them by status
 - Managers can approve or deny any pending requests
-To-Do Features
+<br/>To-Do Features
 - Users can upload an image of their receipt(s)
 - Password Hashing
 - Allow managers to submit reimbursement requests that only other managers can approve/deny
