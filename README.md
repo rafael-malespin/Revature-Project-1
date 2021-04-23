@@ -1,22 +1,36 @@
-# Revature_Project_1
+# Employee Reimbursement System (ERS)
 ## Project Description
-
+A reimbursement system for a company's employees. Employees can request reimbursements for expenses used for either LODGING, TRAVEL, FOOD, or OTHER, the employee may also view the status of previously submitted requests and filter by status.  Finance Managers can view sent in reimbursement requests and either approve or deny any PENDING request.
 ## Technologies Used
-
+- Java
+- JDBC
+- JUnit
+- Log4J
+- Gradle
+- PostgreSQL
+- HTML/CSS
+- JavaScript
 ## Features
 Current Features
-- sfd
-To-Do Features
+- Users can view the status of previously submitted requests
+- Users can filter previously submitted requests by status
+- Users can submit new reimbursement requests
+- Managers can view all past requests from all users and filter them by status
+- Managers can approve or deny any pending requests
+<br/>To-Do Features
+- Users can upload an image of their receipt(s)
+- Password Hashing
+- Allow managers to submit reimbursement requests that only other managers can approve/deny
 - Adjust H2 initialization and ReimbursementUpdate tests so that expected values consistently appear
 
 ## Getting Started
 - First, you need to clone the project
   - git clone https://github.com/rafael-malespin/Revature_Project_1.git
 - Second, you will need to setup the database
-  1) Open DBeaver (install if not installed) and connect to a RDS database
-  2) In the Database Manager, right click the connection and select "Create" then "Database"
-  3) Set "Tablespace" to Default and give the database a name
-  4) Enter the following in a sql script file and then execute it. This is to create the initial users and reimbursements
+  1. Open DBeaver (install if not installed) and connect to a RDS database
+  2. In the Database Manager, right click the connection and select "Create" then "Database"
+  3. Set "Tablespace" to Default and give the database a name
+  4. Enter the following in a sql script file and then execute it. This is to create the initial users and reimbursements
 ```sql 
 
 CREATE TABLE reimbursement_status(
@@ -90,10 +104,10 @@ VALUES (300,CURRENT_TIMESTAMP,'Airplane Ticket',1,1,2);
 
 ```
 - Third, set up the environment variables
-  1) In environment variables, create a variable "TRAINING_DB_NAME" and set its value to be the name of the database that was created in the previous point
-  2) create a variable "TRAINING_DB_ENDPOINT" and set its value to be the endpoint of the RDS database that was created in AWS
-  3) create a variable "TRAINING_DB_USERNAME" and set its value to be the username of the RDS database that was created in AWS
-  4) create a variable "TRAINING_DB_PASSWORD" and set its value to be the password of the RDS database that was created in AWS
+  1. In environment variables, create a variable "TRAINING_DB_NAME" and set its value to be the name of the database that was created in the previous point
+  2. create a variable "TRAINING_DB_ENDPOINT" and set its value to be the endpoint of the RDS database that was created in AWS
+  3. create a variable "TRAINING_DB_USERNAME" and set its value to be the username of the RDS database that was created in AWS
+  4. create a variable "TRAINING_DB_PASSWORD" and set its value to be the password of the RDS database that was created in AWS
 - Fourth, you will need to open the project in an IDE (preferably IntelliJ 2020.3 or above)
   - Open IntelliJ
   - Click File -> Open
