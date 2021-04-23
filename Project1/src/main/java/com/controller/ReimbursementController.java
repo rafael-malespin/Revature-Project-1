@@ -57,7 +57,6 @@ public class ReimbursementController {
     public static void getAllReimbursementsByStatus(Context context){
         User user=context.sessionAttribute("loggedInUser");
         if(user!=null && user.getRoleID()==UserRole.FINANCE_MANAGER) {
-            System.out.println("Manager logged in");
             String statusToFilter = context.pathParam("status");
             context.json(
                     reimbursementService.getReimbursementsByStatus(statusToFilter)
@@ -129,15 +128,13 @@ public class ReimbursementController {
     }
 
     /**
-     *
-     * @param context
+     * Will update a reimbursement to be either Approved or Denied by sending it to the service layer
+     * @param context contains information on a Reimbursement in the body
      */
     public static void updateReimbursement(Context context){
         User user=context.sessionAttribute("loggedInUser");
-        System.out.println(context.body());
         if(user!=null && user.getRoleID()==UserRole.FINANCE_MANAGER) {
             Reimbursement newReimbursement = context.bodyAsClass(Reimbursement.class);
-            System.out.println(newReimbursement);
             boolean success = reimbursementService.updateACertainReimbursement(newReimbursement);
             if (success) {
                 loggy.info("User: "+user.getUserID()+" SUCCEEDED in UPDATING a reimbursement request.");
@@ -152,6 +149,10 @@ public class ReimbursementController {
         }
     }
 
+    /**
+     * Inserts a new reimbursement to the database
+     * @param context contains a new Reimbursement in body
+     */
     public static void insertReimbursement(Context context){
         User user=context.sessionAttribute("loggedInUser");
         if(user==null){
@@ -159,7 +160,6 @@ public class ReimbursementController {
             return;
         }
         Reimbursement newReimbursement=context.bodyAsClass(Reimbursement.class);
-        System.out.println(newReimbursement);
         boolean success = reimbursementService.submitANewReimbursementRequest(
                 newReimbursement);
 

@@ -2,3 +2,164 @@
 2021-04-09 10:02:33 WARN  MainDriver:85 - A client attempted to access server without logging in.
 2021-04-09 10:02:43 INFO  MainDriver:66 - User: 1 SUCCEEDED in LOGGING IN.
 2021-04-09 10:02:44 INFO  MainDriver:99 - All reimbursements for user: 1 were sent to client server.
+2021-04-23 12:43:36 INFO  MainDriver:25 - Server has been started.
+2021-04-23 12:43:44 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 12:53:07 WARN  MainDriver:69 - There was a failed ATTEMPT to login.
+2021-04-23 12:53:13 WARN  MainDriver:69 - There was a failed ATTEMPT to login.
+2021-04-23 12:53:18 WARN  MainDriver:69 - There was a failed ATTEMPT to login.
+2021-04-23 14:07:59 INFO  MainDriver:25 - Server has been started.
+2021-04-23 14:12:06 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 14:13:38 WARN  MainDriver:69 - There was a failed ATTEMPT to login.
+2021-04-23 14:18:57 INFO  MainDriver:25 - Server has been started.
+2021-04-23 14:19:07 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 14:19:13 INFO  MainDriver:66 - User: 1 SUCCEEDED in LOGGING IN.
+2021-04-23 14:19:16 ERROR MainDriver:187 - ERROR when SELECTING a reimbursements FILTERED by USER
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:303)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.dao.ReimbursementDaoImpl.selectAllReimbursementsForUser(ReimbursementDaoImpl.java:159)
+	at com.service.ReimbursementServiceImpl.getAllReimbursementsForUser(ReimbursementServiceImpl.java:50)
+	at com.controller.ReimbursementController.getAllReimbursementsByUser(ReimbursementController.java:98)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:121)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:383)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:81)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	... 49 more
+2021-04-23 14:19:16 INFO  MainDriver:99 - All reimbursements for user: 1 were sent to client server.
+2021-04-23 14:19:25 ERROR MainDriver:233 - ERROR when SELECTING a reimbursements FILTERED by USER and STATUS
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:303)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:51)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:225)
+	at org.postgresql.Driver.makeConnection(Driver.java:465)
+	at org.postgresql.Driver.connect(Driver.java:264)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at com.dao.ReimbursementDaoImpl.selectAllReimbursementsForUserBasedOnStatus(ReimbursementDaoImpl.java:203)
+	at com.service.ReimbursementServiceImpl.getReimbursementsForUserByStatus(ReimbursementServiceImpl.java:62)
+	at com.controller.ReimbursementController.getAllReimbursementsByUserAndStatus(ReimbursementController.java:127)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:23)
+	at io.javalin.http.JavalinServlet$addHandler$protectedHandler$1.handle(JavalinServlet.kt:121)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:45)
+	at io.javalin.http.JavalinServlet$service$2$1.invoke(JavalinServlet.kt:24)
+	at io.javalin.http.JavalinServlet$service$1.invoke(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet$service$2.invoke(JavalinServlet.kt:40)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:81)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.websocket.JavalinWsServlet.service(JavalinWsServlet.kt:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:791)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.core.JavalinServer$start$wsAndHttpHandler$1.doHandle(JavalinServer.kt:49)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1350)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:279)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:383)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:882)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1036)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:81)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:162)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394)
+	at java.net.Socket.connect(Socket.java:606)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:231)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:95)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:213)
+	... 49 more
+2021-04-23 14:19:25 INFO  MainDriver:128 - All PENDING reimbursements for user: 1 were sent to client server.
+2021-04-23 14:20:31 INFO  MainDriver:25 - Server has been started.
+2021-04-23 14:20:47 INFO  MainDriver:25 - Server has been started.
+2021-04-23 14:20:52 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 14:20:52 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 14:21:01 INFO  MainDriver:66 - User: 1 SUCCEEDED in LOGGING IN.
+2021-04-23 14:21:02 INFO  MainDriver:99 - All reimbursements for user: 1 were sent to client server.
+2021-04-23 14:25:32 INFO  MainDriver:168 - User: 1 SUCCEEDED in SUBMITTING a new reimbursement request.
+2021-04-23 14:25:32 INFO  MainDriver:99 - All reimbursements for user: 1 were sent to client server.
+2021-04-23 14:25:39 INFO  MainDriver:100 - User: 1 was LOGGED OUT.
+2021-04-23 14:25:39 WARN  MainDriver:85 - A client attempted to access server without logging in.
+2021-04-23 14:25:48 INFO  MainDriver:66 - User: 3 SUCCEEDED in LOGGING IN.
+2021-04-23 14:25:49 INFO  MainDriver:41 - All reimbursements were sent to user: 3: Gwen Levin
+2021-04-23 14:26:19 INFO  MainDriver:65 - All APPROVED reimbursements were sent to user: 3: Gwen Levin
+2021-04-23 14:26:22 INFO  MainDriver:65 - All PENDING reimbursements were sent to user: 3: Gwen Levin
+2021-04-23 14:27:09 INFO  MainDriver:100 - User: 3 was LOGGED OUT.
+2021-04-23 14:27:10 WARN  MainDriver:85 - A client attempted to access server without logging in.

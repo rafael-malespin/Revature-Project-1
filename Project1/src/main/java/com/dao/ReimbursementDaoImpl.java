@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReimbursementDaoImpl implements ReimbursementDao{
-    public static String url="jdbc:postgresql:"+System.getenv("TRAINING_DB_ENDPOINT")+"/"+System.getenv("TRAINING_DB_NAME");
+    public static String url="jdbc:postgresql://"+System.getenv("TRAINING_DB_ENDPOINT")+"/"+System.getenv("TRAINING_DB_NAME");
     public static String username=System.getenv("TRAINING_DB_USERNAME");
     public static String password=System.getenv("TRAINING_DB_PASSWORD");
 

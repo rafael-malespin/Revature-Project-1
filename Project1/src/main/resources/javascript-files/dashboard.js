@@ -23,28 +23,24 @@ window.onload=function(){
 let loggedInUser;
 
 function checkIfLoggedIn(){
-    console.log("Checking if Logged in");
 
     let xhttp= new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
                 //do nothing
             }
             else if (xhttp.responseText==="No one is logged in"){
-                //do nothing
-                console.log(xhttp.responseText);
+                //do nothing except go to login page
                 window.location.replace("index.html");
             }
             else{
                 loggedInUser= JSON.parse(xhttp.responseText);
                 if(loggedInUser.roleID==="FINANCE_MANAGER"){
-                    console.log("going to manager dash2");
                     window.location.replace("manager-dash.html");
                 }
                 else{
@@ -65,12 +61,10 @@ function WelcomeDOM(){
 }
 
 function loadPrelimReimbursements(selection){
-    console.log("Getting All Pending Reimbursements for user");
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange= function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
@@ -78,13 +72,10 @@ function loadPrelimReimbursements(selection){
             }
             else if (xhttp.responseText==="File Not Found"){
                 //do nothing
-                console.log(xhttp.responseText);
                 window.location.replace("index.html");
             }
             else{
                 let json = JSON.parse(xhttp.responseText);
-                console.log(json);
-                console.log("Length of json response:"+json.length);
                 if(json.length===0){
                     document.getElementById("pendingTable").style.visibility = "hidden";
                     document.getElementById("reimbursementTableBody").innerHTML = "";
@@ -135,7 +126,6 @@ function buildReimbursementTable(reimbursements){
         let submit = new Date(reimbursements[i].submittedTime);
         col6.innerText = submit.toLocaleString();
         col7.innerText = reimbursements[i].resolverName;
-        console.log(reimbursements[i].resolvedTime===null);
         //if it is resolved, convert to useable string else set it to null
         if(reimbursements[i].resolvedTime !== 0 && reimbursements[i].resolvedTime !== null){
             submit = new Date(reimbursements[i].resolvedTime);
@@ -144,8 +134,6 @@ function buildReimbursementTable(reimbursements){
         else{
             col8.innerText = null;
         }
-        
-        console.log(reimbursements[i].status)
         col9.innerText = reimbursements[i].status;
     }
 }
@@ -158,10 +146,7 @@ function logout1(){
     let xhttp= new XMLHttpRequest();
 
     xhttp.onreadystatechange= function(){
-        console.log("Logout State: "+xhttp.readyState);
-        console.log("Logout Status: "+xhttp.status);
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             if(xhttp.responseText==="You have been logged out."){
                 window.location.replace("/index.html");
                 loggedInUser=null;
@@ -171,8 +156,6 @@ function logout1(){
     }
     xhttp.open("GET",`http://localhost:9003/api/users/logout`);
     xhttp.send();
-    console.log("State: "+xhttp.readyState);
-    console.log("Status: "+xhttp.status);
 }
 
 function dropdownSelectionCallback(selection){

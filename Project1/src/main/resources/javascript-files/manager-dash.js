@@ -22,13 +22,11 @@ window.onload=function(){
 let loggedInUser;
 
 function checkIfLoggedIn(){
-    console.log("Checking if Logged in");
 
     let xhttp= new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
@@ -36,13 +34,11 @@ function checkIfLoggedIn(){
             }
             else if (xhttp.responseText==="No one is logged in"){
                 //do nothing
-                console.log(xhttp.responseText);
                 window.location.replace("index.html");
             }
             else{
                 let user = JSON.parse(xhttp.responseText);
                 loggedInUser=user;
-                console.log(user);
                 if(user.roleID==="EMPLOYEE"){
                     window.location.replace("dashboard.html");
                 }
@@ -65,12 +61,10 @@ function WelcomeDOM(ourMessage){
 }
 
 function loadReimbursements(selection){
-    console.log("Getting All Reimbursements for manager");
     let xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange= function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
@@ -78,13 +72,10 @@ function loadReimbursements(selection){
             }
             else if (xhttp.responseText==="File Not Found"){
                 //do nothing
-                console.log(xhttp.responseText);
                 //window.location.replace("index.html");
             }
             else{
                 let json = JSON.parse(xhttp.responseText);
-                console.log(json);
-                console.log("Length of json response:"+json.length);
                 if(json.length===0){
                     document.getElementById("pendingTable").style.visibility = "hidden";
                     document.getElementById("reimbursementTableBody").innerHTML="";
@@ -135,7 +126,6 @@ function createReimbursementTable(json){
         let submit=new Date(json[i].submittedTime);
         col6.innerText= submit.toLocaleString();
         col7.innerText=json[i].resolverName;
-        console.log(json[i].resolvedTime===null);
         if(json[i].resolvedTime!==0 && json[i].resolvedTime!==null){
             submit=new Date(json[i].resolvedTime);
             col8.innerText=submit.toLocaleString();
@@ -144,8 +134,6 @@ function createReimbursementTable(json){
             submit=null;
             col8.innerText=submit;
         }
-        
-        console.log(json[i].status)
         col9.innerText=json[i].status;
 
         //trying to add the buttons for approval/denial only for pending reimbursements
@@ -182,7 +170,6 @@ function addTwoButton(cellVal,reimbursementID){
 
 function callBackForApprovalButtons(reimbursementID,approval,userID){
     return function(){
-        console.log("The reimbursement: "+reimbursementID+" was given the status: "+approval);
         let xhttp = new XMLHttpRequest();
 
         xhttp.onreadystatechange = function(){
@@ -191,7 +178,6 @@ function callBackForApprovalButtons(reimbursementID,approval,userID){
                     window.location.replace("index.html")
                 }
                 else if(xhttp.responseText==="invalid input"){
-                    console.log("Invalid input");
                 }
                 else if(xhttp.responseText==="Reimbursement was not updated"){
                     document.getElementById("updateError").style.visibility="visible";
@@ -229,7 +215,6 @@ function logout1(){
 
     xhttp.onreadystatechange= function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             if(xhttp.responseText==="You have been logged out."){
                 loggedInUser=null;
                 window.location.replace("index.html");

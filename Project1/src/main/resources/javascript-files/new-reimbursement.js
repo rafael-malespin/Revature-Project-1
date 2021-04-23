@@ -21,13 +21,10 @@ let loggedInUser=null;
 let currentType=null;
 
 function checkIfLoggedIn(){
-    console.log("Checking if Logged in");
-
     let xhttp= new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
@@ -35,14 +32,11 @@ function checkIfLoggedIn(){
             }
             else if (xhttp.responseText==="No one is logged in"){
                 //do nothing
-                console.log(xhttp.responseText);
                 window.location.replace("index.html");
             }
             else{
                 loggedInUser = JSON.parse(xhttp.responseText);
-                console.log(loggedInUser);
                 if(loggedInUser.roleID==="FINANCE_MANAGER"){
-                    console.log("going to manager dash2");
                     window.location.replace("manager-dash.html");
                 }
             }
@@ -62,7 +56,6 @@ function submitNewReimbursement(){
 
     //exit the function if amount is nothing or invalid input
     if(document.getElementById("amountInput").value===""||document.getElementById("amountInput").value==="."){
-        //TODO: make error message appear if this is reached
         document.getElementById("updateError").innerText="Invalid amount value.";
         document.getElementById("updateError").style.visibility="visible";
         return;
@@ -77,7 +70,6 @@ function submitNewReimbursement(){
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
 
             if(xhttp.responseText==="Reimbursement successfully submitted."){
                 window.location.href = "/dashboard.html"
@@ -109,7 +101,6 @@ function submitNewReimbursement(){
         "authorID": loggedInUser.userID,
         "type":currentType
     }
-    console.log(jsonToBeSent);;
     xhttp.send(JSON.stringify(jsonToBeSent))
 
 }
@@ -133,7 +124,6 @@ function logout1(){
 
     xhttp.onreadystatechange= function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             if(xhttp.responseText==="You have been logged out."){
                 loggedInUser=null;
                 window.location.replace("index.html");

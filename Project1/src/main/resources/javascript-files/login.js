@@ -10,13 +10,11 @@ window.onload=function(){
 }
 
 function checkIfLoggedIn(){
-    console.log("Checking if Logged in");
 
     let xhttp= new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState===4 && xhttp.status ===200){
-            console.log("Got Response.")
             
             //check if response is null
             if(xhttp.responseText===""){
@@ -28,19 +26,15 @@ function checkIfLoggedIn(){
             }
             else{
                 let res = JSON.parse(xhttp.responseText);
-                console.log(res);
                 if(res.roleID==="EMPLOYEE"){
-                    console.log("going to employee dash")
                     window.location.replace("dashboard.html");
                 }
                 else{
-                    console.log("going to manager dash1");
                     window.location.replace("manager-dash.html");
                 }
             }
         }
         else if(xhttp.readyState===4 && xhttp.status ===404){
-            console.log(xhttp.responseText);
         }
     }
 
@@ -53,20 +47,16 @@ function login(eve){
     attemptLogin();
 }
 function attemptLogin(){
-    console.log("Trying to log in");
     document.getElementById("loginError").style.visibility="hidden"
     let xhttp=new XMLHttpRequest();
 
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState===4 && xhttp.status===200){
-            console.log("Got Response");
             if(xhttp.responseText==="Logged In"){
-                console.log("login in")
                 document.getElementById("loginError").style.visibility="hidden";
                 window.location.href="dashboard.html";
             }
             else{
-                console.log("Login failed")
             document.getElementById("loginError").style.visibility="visible"
             }
         }
@@ -81,6 +71,5 @@ function attemptLogin(){
         "username":user,
         "password":pass
     }
-    console.log(formToSend);
     xhttp.send(JSON.stringify(formToSend));
 }

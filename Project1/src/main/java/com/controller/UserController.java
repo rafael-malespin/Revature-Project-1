@@ -101,7 +101,6 @@ public class UserController {
         }
         context.sessionAttribute("loggedInUser",null);
         context.result("You have been logged out.");
-        System.out.println(context.status());
     }
 
     //Functions for testing use

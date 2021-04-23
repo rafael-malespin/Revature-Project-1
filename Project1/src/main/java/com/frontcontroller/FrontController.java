@@ -30,7 +30,6 @@ public class FrontController {
 
         //do not check kick them out if they are trying to login
         if (!context.path().equals("/api/users/login") && context.path().contains("api/")) {
-            System.out.println(context.path());
             User user = context.sessionAttribute("loggedInUser");
             if (user == null) {
                 throw new UnauthorizedResponse("Not Authorized");
@@ -39,7 +38,7 @@ public class FrontController {
     }
 
     /**
-     *
+     * Sets the Cross Origin authorization
      * @param context used to set the header of the response
      */
     //AFTER
